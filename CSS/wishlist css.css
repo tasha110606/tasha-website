@@ -1,0 +1,459 @@
+@charset "utf-8";
+/* Wishlist Page Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fef9fb;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ✅ HEADER BAR - SAMA MACAM CONTACT PAGE */
+header {
+  background-color: #f487b6;
+  padding: 0 40px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background-color: white;
+  padding: 3px;
+}
+
+.site-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  font-weight: bold;
+  font-family: 'Bahnschrift Light', sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-menu ul li a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu ul li a:hover {
+  color: #ffeaea;
+}
+
+.nav-menu ul li a.active {
+  color: #ffeaea;
+}
+
+
+/* Wishlist Section */
+.wishlist-section {
+  padding: 50px 0;
+  background-color: #fff0f4;
+}
+
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.wishlist-header h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: #ffffff;
+  background-color: #d94182;
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin: 0;
+  white-space: nowrap;
+  font-family: 'Centaur', sans-serif;
+}
+
+
+/* Filter & Reset Container */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-controls label {
+  font-weight: bold;
+  color: #d94182;
+}
+
+.header-controls select {
+  padding: 6px 12px;
+  border: 2px solid #d94182;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #d94182;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header-controls select:hover {
+  background-color: #fff5f9;
+}
+
+.reset-btn {
+  background-color: transparent;
+  border: 2px solid #d94182;
+  color: #d94182;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #d94182;
+  color: #fff;
+}
+
+/* Blinking Icon */
+.book-icon-blink {
+  font-size: 40px;
+  margin: 10px auto;
+  animation: blink 2s infinite;
+  color: #d94182;
+  text-align: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Mini Quote */
+.mini-quote {
+  text-align: center;
+  font-style: italic;
+  font-size: 15px;
+  color: #777;
+  margin: 5px 0 10px;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  text-align: center;
+  font-weight: bold;
+  color: #d94182;
+  margin-bottom: 30px;
+}
+
+/* Wishlist Grid Layout */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  padding: 0 40px;
+}
+
+/* Card Styling */
+.wishlist-card {
+  background: #fff;
+  border: 4px solid #d94182;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 220px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+  text-align: center;
+}
+
+.wishlist-card.from-right {
+  transform: translateX(100px);
+}
+
+.wishlist-card.from-left {
+  transform: translateX(-100px);
+}
+
+.wishlist-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wishlist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.wishlist-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.wishlist-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-card h3 {
+  margin: 10px 0 5px;
+}
+
+/* Status + Progress Bar */
+.status {
+  font-weight: bold;
+  color: #d94182;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background: #ffe1ec;
+  border-radius: 5px;
+  height: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.progress {
+  background: #f58bb0;
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.4s;
+}
+
+/* Button */
+.wishlist-btn {
+  background-color: #f58bb0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.wishlist-btn:hover:not(:disabled) {
+  background-color: #d94182;
+}
+
+.wishlist-btn:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+
+.site-footer {
+  background-color: #df7f9b;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  flex: 1 1 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* dari center tukar ke kiri */
+  justify-content: center;
+}
+
+
+
+.footer-logo img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.footer-logo p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-menu {
+  flex: 1 1 200px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* dua lajur */
+  gap: 10px 20px;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  text-align: left;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  padding-right: 100px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start; /* Rapat ke kiri */
+  align-items: center;
+  margin-top: 10px; /* atau sesuaikan */
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+
+.footer-subscribe {
+  flex: 1 1 300px;
+  text-align: right;
+}
+
+.footer-subscribe p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.footer-subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-subscribe input[type="email"] {
+  padding: 10px;
+  width: 420px; /* Lebih panjang */
+  border: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-subscribe button {
+  width: 440px; /* Sama panjang dengan input */
+  background-color: #c03663;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.footer-subscribe button:hover {
+  background-color: #a72e54;
+}
+
+
+.footer-bottom {
+  text-align: right;
+  margin-top: 20px;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  font-size: 14px;
+}

@@ -1,0 +1,328 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* HEADER — seragam dan tiada globe */
+header {
+  background-color: #f487b6;
+  padding: 0 40px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background-color: white;
+  padding: 3px;
+}
+
+.site-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Navbar Setup */
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* awak boleh adjust ke 70px atau 50px ikut rasa sesuai */
+  margin-left: 100px; /* JARAK DARI NAMA KE MENU */
+}
+.nav-menu ul li a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-menu ul li {
+  font-weight: bold;
+  font-family: 'Bahnschrift Light', sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu ul li a:hover {
+  color: #ffeaea;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url("../IMAGES/photo_2025-07-16_21-20-36.jpg"); /* ✅ tukar path ikut lokasi fail gambar */
+  background-size: cover;        /* supaya gambar penuh 1 skrin */
+  background-repeat: no-repeat;  /* jangan ulang */
+  background-attachment: fixed;  /* kekal bila scroll */
+  background-position: center;   /* letak tengah */
+  color: #333;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f794c6;
+}
+
+
+.logo {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links .active {
+  text-decoration: underline;
+}
+
+.icon {
+  height: 24px;
+}
+
+.section-wrapper {
+  text-align: center;
+}
+
+.section-title {
+  background-color: #f487b6;   /* 🎀 warna pink */
+  color: white;                /* 🤍 teks putih */
+  display: inline-block;       /* 💡 ikut panjang teks */
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 60px auto 30px; /* atas lebih jauh (60px) */
+  border-radius: 8px;
+}
+
+
+.book-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.book {
+  background-color: white;
+  border: 4px solid #87CEEB;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 200px;
+}
+.book:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.site-footer {
+  background-color: #df7f9b;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  flex: 1 1 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* dari center tukar ke kiri */
+  justify-content: center;
+}
+
+
+
+.footer-logo img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.footer-logo p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-menu {
+  flex: 1 1 200px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* dua lajur */
+  gap: 10px 20px;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  text-align: left;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  padding-right: 100px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start; /* Rapat ke kiri */
+  align-items: center;
+  margin-top: 10px; /* atau sesuaikan */
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+
+.footer-subscribe {
+  flex: 1 1 300px;
+  text-align: right;
+}
+
+.footer-subscribe p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.footer-subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-subscribe input[type="email"] {
+  padding: 10px;
+  width: 400px; /* Lebih panjang */
+  border: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-subscribe button {
+  width: 420px; /* Sama panjang dengan input */
+  background-color: #c03663;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.footer-subscribe button:hover {
+  background-color: #a72e54;
+}
+
+
+.footer-bottom {
+  text-align: right;
+  margin-top: 20px;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  font-size: 14px;
+}
+

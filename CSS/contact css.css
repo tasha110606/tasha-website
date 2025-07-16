@@ -1,0 +1,398 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* ✅ HEADER STYLES */
+header {
+  background-color: #f487b6;
+  padding: 0 40px;
+  height: 80px; /* ❗ from 90px to 70px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px; /* ❗ from 65px */
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background-color: white;
+  padding: 3px;
+}
+
+.site-name {
+  font-size: 18px; /* ❗ from 22px */
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  font-weight: bold;
+  font-family: 'Bahnschrift Light', sans-serif;
+  font-size: 20px; /* ❗ from 25px */
+  display: flex;
+  align-items: center;
+  height: 60px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-menu ul li a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 16px; /* ❗ from 18px */
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu ul li a:hover {
+  color: #ffeaea;
+}
+
+/* ✅ BODY FIX */
+body {
+  min-height: 100vh;
+  background-color: #87CEEB
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 0;
+}
+
+/* ✅ CONTACT SECTION */
+.contact-wrapper {
+  display: flex;
+  max-width: 1000px;
+  width: 90%;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.left-image {
+  flex: 0 0 350px;
+  overflow: hidden;
+}
+
+.left-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+
+  /* ✅ Bayang seimbang keliling gambar */
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.15),
+    0 0 8px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.left-image img:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 30px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.right-box {
+  flex: 1;
+}
+
+.right-box h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fffffff; /* 🎀 tukar warna pink kat sini */
+  font-family: 'Calisto MT', sans-serif;
+}
+
+.form-box {
+  border: 1px solid #000;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  padding: 5px 0;
+  font-size: 15px;
+}
+
+form textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+form button {
+  background: #f487b6; /* 🎀 pink background */
+  color: #fff;         /* 🤍 text putih */
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  width: fit-content;
+  margin: 15px auto 0 auto;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #e46da4; /* 🎀 warna hover pink lebih gelap sikit */
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 7px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+}
+
+.site-footer {
+  background-color: #df7f9b;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  flex: 1 1 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* dari center tukar ke kiri */
+  justify-content: center;
+}
+
+
+
+.footer-logo img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.footer-logo p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-menu {
+  flex: 1 1 200px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* dua lajur */
+  gap: 10px 20px;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  text-align: left;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  padding-right: 100px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start; /* Rapat ke kiri */
+  align-items: center;
+  margin-top: 10px; /* atau sesuaikan */
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+
+.footer-subscribe {
+  flex: 1 1 300px;
+  text-align: right;
+  padding-right: 20px; /* ✅ tambah ruang kanan supaya input betul-betul selari */
+}
+
+.footer-subscribe p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.footer-subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ✅ selarikan ke kanan */
+  gap: 6px; /* ✅ rapatkan input dan button */
+}
+
+.footer-subscribe input[type="email"] {
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  color: #333;
+  font-size: 15px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-subscribe input[type="email"]::placeholder {
+  color: #888;
+}
+
+.footer-subscribe button {
+  width: 100%;
+  max-width: 420px;
+  background-color: #c03663;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+  border-radius: 0; /* ❌ Tiada lengkungan */
+  margin: 0; /* ❗ Buang margin supaya rapat ke kotak email */
+}
+
+
+.footer-subscribe button:hover {
+  background-color: #a72e54;
+}
+
+.footer-bottom {
+  text-align: right;
+  margin-top: 20px;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  font-size: 14px;
+}
+

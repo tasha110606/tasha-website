@@ -1,0 +1,562 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url("../IMAGES/c2b6a15e-00a8-43bb-975c-e76452388e4d.png"); /* ✅ tukar path ikut lokasi fail gambar */
+  background-size: cover;        /* supaya gambar penuh 1 skrin */
+  background-repeat: no-repeat;  /* jangan ulang */
+  background-attachment: fixed;  /* kekal bila scroll */
+  background-position: center;   /* letak tengah */
+  color: #333;
+}
+
+
+/* ---------------- HEADER ---------------- */
+header {
+  background-color: #f487b6;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 0 30px; /* bagi rapat ke kiri */
+}
+
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background-color: white;
+  padding: 3px;
+}
+
+.site-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* awak boleh adjust ke 70px atau 50px ikut rasa sesuai */
+  margin-left: 100px; /* JARAK DARI NAMA KE MENU */
+}
+
+
+.nav-menu ul li {
+  font-weight: bold;
+  font-family: 'Bahnschrift Light', sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-menu ul li a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu ul li a:hover {
+  color: #ffeaea;
+}
+
+.nav-menu ul li a.active {
+  color: #ffeaea;
+}
+/* ---------------- MAIN CONTENT ---------------- */
+main {
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+.carousel-container {
+  width: 1200px;
+  height: 600px;
+  overflow: hidden;
+  margin-left: -100px; /* ✅ Tarik keluar dari tepi kiri skrin */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollCarousel 10s infinite linear;
+}
+
+.carousel-track img {
+  width: 1000px;   /* Sama dengan container */
+  height: 600px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes scrollCarousel {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-3000px); }  /* 1000 × 3 */
+}
+
+.text-section {
+  width: 780px;           /* Sama macam slider */
+  height: 480px;          /* Sama tinggi */
+  background-color: white;
+  background-image: url("../IMAGES/background 2.jpg");
+  background-repeat: no-repeat;
+  background-size: 180%;
+  background-position: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  padding: 50px 40px;     /* ruang dalam kotak */
+  display: flex;          /* untuk susun isi di dalam */
+  flex-direction: column;
+  justify-content: center; /* tengah menegak */
+  align-items: flex-start; /* ikut kiri */
+  text-align: left;
+}
+
+
+
+
+
+.text-section h1 {
+  font-size: 90px; /* atau ikut suka */
+  font-weight: 900;
+  color: #f0558b;
+  margin: 0 auto 10px;
+  animation: scaleUp 1s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.95);
+  text-align: center;
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.main-subtitle {
+  font-size: 30px;
+  font-style: italic;
+  color: #1a1a1a;
+  margin: 15px 0;
+  text-align:center;
+  line-height: 1.5;
+}
+
+.quote {
+  font-size: 20px;
+  color: #999999;
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.get-started {
+  background-color: #f0558b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 16px 32px; /* ✅ Besarkan padding */
+  font-size: 18px;     /* ✅ Besarkan saiz font */
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.get-started:hover {
+  background-color: #ff8cb5;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* ---------------- AUTHOR SECTION ---------------- */
+.author-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f0558b;
+}
+
+.author-section h2 {
+  font-size: 36px;
+  color: white;
+  background-color: #f487b6;
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.author-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+
+.author-card {
+  width: 240px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+
+.author-card img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #87CEEB;
+}
+
+
+.author-name {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Bahnschrift Light', sans-serif; 
+  font-size: 25px;
+}
+
+.author-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.first-book-section {
+  background-color:  #fef9fb;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.first-book-section h2 {
+  font-size: 36px;
+  color: #f0558b;
+  margin-bottom: 30px;
+  font-family: 'Arial Black', sans-serif;
+}
+
+
+.first-book-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; /* dari 40 ke 30 */
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+
+/* Gambar kiri */
+.book-image img {
+  width: 300px; /* dari 250 ke 280 */
+  border-radius: 0px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Teks kanan */
+.book-text {
+  width: 500px;  /* dari 320 ke 380 */
+  padding: 40px 30px;
+  background-color: #87CEEB;  
+  color: white;
+  border-radius: 20px;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+}
+/* MY LIBRARY SECTION */
+.my-library-section {
+  padding: 80px 40px;
+  background-color:  #87CEEB;
+  text-align: center;
+}
+
+.my-library-section h2 {
+  font-size: 40px; /* <-- dari 32px ke 40px */
+  color: white;
+  background-color: #f487b6;
+  display: inline-block;
+  padding: 14px 36px; /* boleh tambah padding sikit */
+  border-radius: 12px;
+  margin-bottom: 40px;
+  font-family: 'Baskerville Old Face', sans-serif;
+}
+
+.library-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding-bottom: 10px;
+  padding-right: 80px; /* ruang supaya buku ke-5 nampak separuh */
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.library-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.library-card {
+  flex: 0 0 calc(22%); /* Besar sikit supaya 4.5 kad saja muat satu baris */
+  text-align: center;
+}
+
+.library-card img {
+  display: block;
+  margin: 0 auto;
+  margin-left: 20px; /* adjust ikut berapa jauh nak ke kiri */
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 4px solid #f0558b;
+}
+
+.library-card p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+/* Hide scrollbar */
+.library-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation */
+.animate-left, .animate-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+.animate-left {
+  transform: translateX(-100px);
+}
+
+.animate-left.show,
+.animate-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.site-footer {
+  background-color: #df7f9b;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px 10px;
+  font-size: 18px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  flex: 1 1 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* dari center tukar ke kiri */
+  justify-content: center;
+}
+
+
+
+.footer-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.footer-logo p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.footer-menu {
+  flex: 1 1 200px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* dua lajur */
+  gap: 10px 20px;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  text-align: center;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+}
+
+.footer-subscribe {
+  flex: 1 1 300px;
+  text-align: right;
+}
+
+.footer-subscribe p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.footer-subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-subscribe input[type="email"] {
+  padding: 10px;
+  width: 550px; /* Lebih panjang */
+  border: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-subscribe button {
+  width: 550px; /* Sama panjang dengan input */
+  background-color: #c03663;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 0; /* Tiada lengkungan */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.footer-subscribe button:hover {
+  background-color: #a72e54;
+}
+
+
+.footer-bottom {
+  text-align: right;
+  margin-top: 20px;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+
+
+
