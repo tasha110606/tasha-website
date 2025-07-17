@@ -19,12 +19,20 @@ html, body {
 /* ---------------- HEADER ---------------- */
 header {
   background-color: #f487b6;
-  padding: 0 40px;
-  height: 70px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.header-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 0 30px; /* bagi rapat ke kiri */
+}
+
 
 .navbar {
   width: 100%;
@@ -38,11 +46,15 @@ header {
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
+
+
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
@@ -51,7 +63,7 @@ header {
 }
 
 .site-name {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -67,10 +79,12 @@ header {
 .nav-menu ul {
   list-style: none;
   display: flex;
-  gap: 50px;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* awak boleh adjust ke 70px atau 50px ikut rasa sesuai */
+  margin-left: 100px; /* JARAK DARI NAMA KE MENU */
 }
+
 
 .nav-menu ul li {
   font-weight: bold;
@@ -87,7 +101,7 @@ header {
   font-weight: 600;
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 22px;
   position: relative;
   transition: 0.3s ease;
 }
